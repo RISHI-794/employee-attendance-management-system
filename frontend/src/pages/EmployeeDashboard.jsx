@@ -26,7 +26,7 @@ function EmployeeDashboard() {
         const token = localStorage.getItem("token");
 
         await axios.post(
-            "http://localhost:5000/api/attendance/check-in",
+            "https://employee-attendance-management-system-6b2u.onrender.com/api/attendance/check-in",
             {},
             {
                 headers: {
@@ -57,7 +57,7 @@ const handleCheckOut = async () => {
         const token = localStorage.getItem("token");
 
         await axios.post(
-            "http://localhost:5000/api/attendance/check-out",
+            "https://employee-attendance-management-system-6b2u.onrender.com/api/attendance/check-out",
             {},
             {
                 headers: {
@@ -96,7 +96,7 @@ const handleLeaveSubmit = async (e) => {
         const token = localStorage.getItem("token");
 
         await axios.post(
-            "http://localhost:5000/api/leave/apply",
+            "https://employee-attendance-management-system-6b2u.onrender.com/api/leave/apply",
             {
                 startDate: leaveStartDate,
                 endDate: leaveEndDate,
@@ -136,7 +136,7 @@ const handleLeaveSubmit = async (e) => {
                 const token = localStorage.getItem("token");
 
                 const response = await axios.get(
-                    "http://localhost:5000/api/attendance/dashboard",
+                    "https://employee-attendance-management-system-6b2u.onrender.com/api/attendance/dashboard",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

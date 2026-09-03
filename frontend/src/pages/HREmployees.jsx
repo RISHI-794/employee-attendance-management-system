@@ -35,7 +35,7 @@ function HREmployees() {
             const token = localStorage.getItem("token");
 
             const response = await axios.get(
-                "http://localhost:5000/api/employees/all",
+                "https://employee-attendance-management-system-6b2u.onrender.com/api/employees/all",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -70,7 +70,7 @@ function HREmployees() {
             const token = localStorage.getItem("token");
 
             const response = await axios.post(
-                "http://localhost:5000/api/employees/add",
+                "https://employee-attendance-management-system-6b2u.onrender.com/api/employees/add",
                 {
                     employeeId,
                     name,
@@ -129,7 +129,7 @@ const handleSaveEdit = async () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.put(
-            `http://localhost:5000/api/employees/${editingEmployee._id}`,
+            `https://employee-attendance-management-system-6b2u.onrender.com/api/employees/${editingEmployee._id}`,
             {
                 name: editName,
                 email: editEmail,
@@ -186,7 +186,7 @@ const handleSaveEdit = async () => {
         const token = localStorage.getItem("token");
 
         await axios.delete(
-            `http://localhost:5000/api/employees/${employeeId}`,
+            `https://employee-attendance-management-system-6b2u.onrender.com/api/employees/${employeeId}`,
             {
                 headers: {
                     Authorization: `Bearer ${token}`

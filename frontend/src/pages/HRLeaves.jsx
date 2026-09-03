@@ -14,7 +14,7 @@ function HRLeaves() {
         const token = localStorage.getItem("token");
 
         await axios.put(
-            `http://localhost:5000/api/leave/${leaveId}/status`,
+            `https://employee-attendance-management-system-6b2u.onrender.com/api/leave/${leaveId}/status`,
             { status },
             {
                 headers: {
@@ -41,7 +41,7 @@ function HRLeaves() {
             const token = localStorage.getItem("token");
 
             const response = await axios.get(
-                "http://localhost:5000/api/leave/all",
+                "https://employee-attendance-management-system-6b2u.onrender.com/api/leave/all",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`

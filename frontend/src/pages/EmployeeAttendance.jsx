@@ -16,7 +16,7 @@ function EmployeeAttendance() {
                 const token = localStorage.getItem("token");
 
                 const response = await axios.get(
-                    "http://localhost:5000/api/attendance/dashboard",
+                    "https://employee-attendance-management-system-6b2u.onrender.com/api/attendance/dashboard",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`

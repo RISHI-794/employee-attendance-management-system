@@ -21,7 +21,7 @@ function EmployeeLeave() {
                 const token = localStorage.getItem("token");
 
                 const response = await axios.get(
-                    "http://localhost:5000/api/leave/history",
+                    "https://employee-attendance-management-system-6b2u.onrender.com:5000/api/leave/history",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -55,7 +55,7 @@ function EmployeeLeave() {
             const token = localStorage.getItem("token");
 
             const response = await axios.post(
-                "http://localhost:5000/api/leave/apply",
+                "https://employee-attendance-management-system-6b2u.onrender.com/api/leave/apply",
                 {
                     startDate,
                     endDate,
@@ -78,7 +78,7 @@ function EmployeeLeave() {
             setReason("");
 
             const updatedLeaves = await axios.get(
-                "http://localhost:5000/api/leave/history",
+                "https://employee-attendance-management-system-6b2u.onrender.com/api/leave/history",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
