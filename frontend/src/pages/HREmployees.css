@@ -1,0 +1,412 @@
+.hr-employees {
+    min-height: 100vh;
+    padding: 40px;
+    background: #f5f7fb;
+    font-family: Arial, sans-serif;
+    color: #1f2937;
+}
+
+.hr-employees-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.hr-employees-header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.hr-employees-back-button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 14px;
+}
+
+.hr-employees-back-button:hover {
+    opacity: 0.85;
+}
+
+.employee-form-card {
+    background: #ffffff;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.employee-form-card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.employee-form {
+    display: grid;
+    gap: 18px;
+}
+
+.employee-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.employee-form-field label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.employee-form-field input {
+    padding: 11px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.employee-form-field input:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.create-employee-button {
+    width: fit-content;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #4f46e5;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.create-employee-button:hover {
+    opacity: 0.9;
+}
+
+.create-employee-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.employee-success-message {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #ecfdf5;
+    color: #166534;
+}
+
+.employee-error-message {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+@media (max-width: 600px) {
+    .hr-employees {
+        padding: 20px;
+    }
+
+    .hr-employees-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .employee-form-card {
+        padding: 20px;
+    }
+}
+
+.employee-list-section {
+    background: #ffffff;
+    max-width: 900px;
+    margin-top: 25px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.employee-list-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.employee-list {
+    display: grid;
+    gap: 15px;
+}
+
+.employee-card {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.employee-card h3 {
+    margin: 0 0 15px;
+    font-size: 18px;
+}
+
+.employee-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.employee-details div {
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.employee-details span {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+.employee-details strong {
+    font-size: 14px;
+    color: #1f2937;
+    word-break: break-word;
+}
+
+@media (max-width: 800px) {
+    .employee-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .employee-details {
+        grid-template-columns: 1fr;
+    }
+
+    .employee-list-section {
+        padding: 20px;
+    }
+}
+
+/* Edit Employee Modal */
+
+.edit-modal-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(15, 23, 42, 0.65) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 99999 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+}
+
+.edit-modal-overlay .edit-modal {
+    width: 100% !important;
+    max-width: 560px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.edit-modal-overlay .edit-modal-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 20px 24px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.edit-modal-overlay .edit-modal-header h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #111827 !important;
+    background: transparent !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+}
+
+.edit-modal-overlay .edit-modal-close {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: #f3f4f6 !important;
+    color: #374151 !important;
+    font-size: 22px !important;
+    line-height: 36px !important;
+    text-align: center !important;
+    cursor: pointer !important;
+}
+
+.edit-modal-overlay .edit-modal-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+}
+
+.edit-modal-overlay .edit-modal-body .employee-form-field {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.edit-modal-overlay .edit-modal-body .employee-form-field label {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #374151 !important;
+    background: transparent !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.edit-modal-overlay .edit-modal-body .employee-form-field input {
+    display: block !important;
+    width: 100% !important;
+    height: 42px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 14px !important;
+    outline: none !important;
+}
+
+.edit-modal-overlay .edit-modal-body .employee-form-field input:focus {
+    border-color: #2563eb !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+}
+
+.edit-modal-overlay .edit-modal-body .employee-form-field input:disabled {
+    background: #f3f4f6 !important;
+    color: #6b7280 !important;
+    cursor: not-allowed !important;
+}
+
+.edit-modal-overlay .edit-modal-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 18px 24px !important;
+    background: #ffffff !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+.edit-modal-overlay .cancel-edit-button {
+    width: auto !important;
+    height: auto !important;
+    padding: 11px 18px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: #e5e7eb !important;
+    color: #374151 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+}
+
+.edit-modal-overlay .save-edit-button {
+    width: auto !important;
+    height: auto !important;
+    padding: 11px 18px !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background: #2563eb !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+}
+
+.edit-modal-overlay .save-edit-button:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+}
+
+.edit-employee-button {
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 9px 14px !important;
+    margin-right: 8px !important;
+    background: #2563eb !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+}
+
+.delete-employee-button {
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 9px 14px !important;
+    background: #dc2626 !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+}
+
+@media (max-width: 600px) {
+    .edit-modal-overlay {
+        padding: 12px !important;
+    }
+
+    .edit-modal-overlay .edit-modal-actions {
+        flex-direction: column !important;
+    }
+
+    .edit-modal-overlay .cancel-edit-button,
+    .edit-modal-overlay .save-edit-button {
+        width: 100% !important;
+    }
+}
+
+.hr-employees h1,
+.hr-employees h2,
+.hr-employees h3 {
+    color: #111827 !important;
+}
+
+.hr-employees-header h1,
+.employee-form-card h2,
+.employee-list-section h2 {
+    color: #111827 !important;
+}
+
+.hr-employees {
+    outline: 5px solid red !important;
+}
